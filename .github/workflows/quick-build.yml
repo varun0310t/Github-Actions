@@ -1,0 +1,30 @@
+name: Simple Build
+run-name: Quick build for ${{ github.sha }}
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  quick-build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install and Build
+      run: |
+        npm ci
+        npm run build
+        
+    - name: Basic Tests
+      run: |
+        echo "Testing build output..."
+        node -c dist/index.js
+        echo "✅ Build successful!"

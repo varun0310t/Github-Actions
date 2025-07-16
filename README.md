@@ -1,5 +1,8 @@
 # Express TypeScript App
 
+[![Build and Deploy Express App](https://github.com/varun0310t/Github-Actions/actions/workflows/build-deploy.yml/badge.svg)](https://github.com/varun0310t/Github-Actions/actions/workflows/build-deploy.yml)
+[![Simple Build](https://github.com/varun0310t/Github-Actions/actions/workflows/quick-build.yml/badge.svg)](https://github.com/varun0310t/Github-Actions/actions/workflows/quick-build.yml)
+
 A basic Express.js application built with TypeScript.
 
 ## Features

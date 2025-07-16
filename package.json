@@ -7,7 +7,11 @@
     "start": "node dist/index.js",
     "dev": "ts-node src/index.ts",
     "watch": "nodemon --exec ts-node src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "test": "node tests/basic.test.js",
+    "test:build": "npm run build && npm run test:integration",
+    "test:integration": "node tests/integration.test.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +30,9 @@
   "devDependencies": {
     "@types/express": "^4.17.17",
     "@types/node": "^20.4.5",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.57.1",
     "nodemon": "^3.0.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
